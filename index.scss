@@ -1,0 +1,164 @@
+body{  
+	background: #00a651;
+	margin: 0;
+	padding: 0;  
+}
+p{
+	margin: 0;
+}
+.puker{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 680px;
+	height: 480px;
+}
+
+.card{
+	position: relative;  
+	float: left;  
+	margin-right: 20px;
+	margin-bottom: 20px;  
+	width: 150px;  
+	height: 220px;  
+	border-radius: 10px;  
+	background: #fff;  
+	-webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);  
+	box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+	p{
+		text-align: center;
+		font-size: 100px;
+		line-height: 220px;
+		font-family: Georgia, 'Times New Roman', serif;
+	}  
+}
+%clear{
+	color: #000000;
+	position: absolute;
+	font-size: 35px;
+}
+%hongse{
+	color: #ff0000;
+	position: absolute;
+	font-size: 35px;
+}
+%before{
+	left: 5px;
+	top: 5px;
+}
+%after{
+	right: 5px;
+	bottom: 5px;
+}
+.heitao:before, .heitao:after{
+  content: "♠";
+  @extend %clear;
+}
+.heitao:before{
+	@extend %before;
+}
+.heitao:after{
+	@extend %after;
+}
+.meihua:before, .meihua:after{
+  content: "♣";
+  @extend %clear;
+}
+.meihua:before{
+	@extend %before;
+}
+.meihua:after{
+	@extend %after;
+}
+.hongtao:before, .hongtao:after{
+  content: "♥";
+  @extend %hongse;
+}
+.hongtao:before{
+	@extend %before;
+}
+.hongtao:after{
+	@extend %after;
+}
+.fangkuai:before, .fangkuai:after{
+  content: "♦";
+  @extend %hongse;
+}
+.fangkuai:before{
+	@extend %before;
+}
+.fangkuai:after{
+	@extend %after;
+}
+@keyframes tiaoyue1{
+	0%{
+		transform:translateY(0);
+	}
+	
+	50%{
+		transform:translateY(4px);
+	}
+	100%{
+		transform:translateY(0);
+	}
+}
+@keyframes tiaoyue2{
+	0%{
+		transform:translateY(0);
+	}
+	
+	50%{
+		transform:translateY(-4px);
+	}
+	100%{
+		transform:translateY(0);
+	}
+}
+@keyframes xuanzhuan{
+	0%{
+		transform:rotateY(0deg);
+	}
+	50%{
+		transform:rotateY(0deg);
+	}
+	100%{
+		transform:rotateY(360deg);
+	}
+}
+
+.nine{
+	.heitao{
+		animation:xuanzhuan 3s infinite;
+		transform-style: preserve-3d;
+	}
+	.fangkuai{
+		animation:tiaoyue1 1s ease both infinite;
+	}
+	.meihua{
+		animation:tiaoyue1 1s ease both infinite;
+	}
+	.hongtao{
+		animation:xuanzhuan 3s infinite;
+		transform-style: preserve-3d;
+	}
+}
+.four{
+	.heitao{
+		animation:tiaoyue2 1s ease both infinite;
+	}
+	.fangkuai{
+		animation:xuanzhuan 3s infinite;
+		transform-style: preserve-3d;
+	}
+	.meihua{
+		animation:xuanzhuan 3s infinite;
+		transform-style: preserve-3d;
+	}
+	.hongtao{
+		animation:tiaoyue2 1s ease both infinite;
+	}
+}
+
